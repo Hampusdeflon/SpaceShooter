@@ -101,7 +101,6 @@ public class Player : MonoBehaviour
                 break;
 
             default:
-                break;
-        }
+                break;        }
     }
 }
