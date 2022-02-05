@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
 
         anim = GetComponent<Animator>();
-
     }
 
     private void Update()
@@ -76,7 +75,7 @@ public class Enemy : MonoBehaviour
         {
             anim.SetTrigger("enemyDeathExplosion");
 
-            Destroy(this.gameObject, 0.11f);          //destroy after (0.12 sec = anim duration)
+            Destroy(this.gameObject, 0.11f);          //destroy after (0.11 sec = anim duration)
             Destroy(collision.gameObject);    
             FindObjectOfType<ScoreManager>().score++;
         }

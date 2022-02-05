@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ed891a8765a748118b877982d422583, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12291d9aa888b41c58f66187eb386317, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -196,3 +196,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletdirection: 1
   bulletSpeed: 23
+  level1Sprite: {fileID: 21300000, guid: 5ed891a8765a748118b877982d422583, type: 3}

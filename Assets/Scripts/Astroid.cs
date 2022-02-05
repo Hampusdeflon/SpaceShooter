@@ -6,23 +6,26 @@ public class Astroid : MonoBehaviour
 {
     public string astroidType;
 
+    //Health
     public HealthBar healthBar;
     public int maxHealth;
     private int currentHealth;
 
     public GameObject itemToDrop;
+
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
+        //Health
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,6 +37,9 @@ public class Astroid : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 Instantiate(itemToDrop, transform.position, transform.rotation);
+
+
+
 
             }
         }

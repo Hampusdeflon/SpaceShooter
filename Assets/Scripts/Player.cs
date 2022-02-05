@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+
     public float playerSpeed;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
@@ -11,8 +13,12 @@ public class Player : MonoBehaviour
     //Player Bullet:
     public GameObject playerBullet;
     public Transform bulletSpawnPos;
-    public float attackTimer = 1f;
+    public float attackTimer;
     private float curAttackTimerc;
+    public float _curAttackTimerc
+    {
+        set { curAttackTimerc = value; }
+    }
 
     //Audio
     public AudioSource bulletSound;
@@ -25,8 +31,15 @@ public class Player : MonoBehaviour
     //Animation
     private Animator anim;
 
+    //Weapon
+    private int weaponLevel = 0;
+    public WeaponUpgrade weaponUpgrader;
+
+    //UI
     public GameOver gameOverScreen;     //Takes the GameOver.cs file 
 
+
+   
 
 
     // Start is called before the first frame update
@@ -100,7 +113,13 @@ public class Player : MonoBehaviour
                 Destroy(collision.gameObject);
                 break;
 
+            case "WeaponUpgrade":
+                weaponUpgrader.Upgrade(++weaponLevel);
+
+                break;
+
             default:
-                break;        }
+                break;        
+        }
     }
 }

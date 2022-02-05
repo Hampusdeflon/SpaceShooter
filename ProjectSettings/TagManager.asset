@@ -10,6 +10,7 @@ TagManager:
   - EnemyBullet
   - Score
   - Life
+  - WeaponUpgrade
   layers:
   - Default
   - TransparentFX

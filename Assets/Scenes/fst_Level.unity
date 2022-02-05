@@ -463,10 +463,11 @@ MonoBehaviour:
   playerSpeed: 9
   playerBullet: {fileID: 4721744508064607777, guid: 98bbda4142f669744bd32503ac0033c4, type: 3}
   bulletSpawnPos: {fileID: 1266886468}
-  attackTimer: 0.2
+  attackTimer: 0.27
   bulletSound: {fileID: 1743563187}
   healthBar: {fileID: 1375144123}
   maxHealth: 20
+  weaponUpgrader: {fileID: 2871313927090563892, guid: 1c8d553508e0eea4c87990bce9fa0ad2, type: 3}
   gameOverScreen: {fileID: 424311537}
 --- !u!50 &481973124
 Rigidbody2D:

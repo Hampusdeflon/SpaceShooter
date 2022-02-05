@@ -7,14 +7,15 @@ public class Bullet : MonoBehaviour
     public int bulletdirection;
     public float bulletSpeed;
 
-    
+    //To change sprite
+
 
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -22,9 +23,13 @@ public class Bullet : MonoBehaviour
     }
     void MoveBullet()
     {
+        
         Vector3 tempPosition = transform.position;
         tempPosition.x += bulletSpeed * Time.deltaTime  * bulletdirection;
         transform.position = tempPosition;
+
+        //rotate 180*
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
