@@ -91,6 +91,8 @@ public class Player : MonoBehaviour
     {
         if(currentHealth == 1)
         {
+            anim.SetTrigger("playerDeathExplosion");
+            Destroy(this.gameObject, 0.35f);
             int score = (int)FindObjectOfType<ScoreManager>().score;
             gameOverScreen.SetupScreen(score);
         }
@@ -115,6 +117,7 @@ public class Player : MonoBehaviour
 
             case "WeaponUpgrade":
                 weaponUpgrader.Upgrade(++weaponLevel);
+                Destroy(collision.gameObject);
 
                 break;
 

@@ -22,7 +22,7 @@ public class WeaponUpgrade : MonoBehaviour
 
 
                 break;
-            //hold and shoot stråle on buttonpress
+            //hold and shoot stråle on buttonpress?
 
             // Two shooters slow
             case 2:

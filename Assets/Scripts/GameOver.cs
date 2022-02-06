@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
 
    public void SetupScreen(int score)
     {
-        Time.timeScale = 0;         //Pause the screen
+        Time.timeScale = 0.3f;         //Pause the screen
         gameObject.SetActive(true);
         pointsText.text = score.ToString() + " POINTS";
     }

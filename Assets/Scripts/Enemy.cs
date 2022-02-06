@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         if(shootTimer > curShootTimer)
         {
             shootTimer = 0;
-            Instantiate(enemyBullet, bulletSpawnPos.position, Quaternion.identity);
+            Instantiate(enemyBullet, bulletSpawnPos.position, Quaternion.Euler(0f,180f,0f)); // rotate 180*
             bulletSound.PlayDelayed(0);
 
         }
@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
         {
             anim.SetTrigger("enemyDeathExplosion");
 
-            Destroy(this.gameObject, 0.11f);          //destroy after (0.11 sec = anim duration)
+            Destroy(this.gameObject, 0.15f);          //destroy after (0.11 sec = anim duration)
             Destroy(collision.gameObject);    
             FindObjectOfType<ScoreManager>().score++;
         }
