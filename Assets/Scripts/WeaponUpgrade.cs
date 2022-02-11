@@ -18,7 +18,6 @@ public class WeaponUpgrade : MonoBehaviour
                 FindObjectOfType<Player>()._curAttackTimerc = 0.2f;
                 
                 Debug.Log("Increased Player Speed!");
-                Debug.Log(FindObjectOfType<Bullet>().GetComponentInChildren<SpriteRenderer>().sprite);
 
 
                 break;
