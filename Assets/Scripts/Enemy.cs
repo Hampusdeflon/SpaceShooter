@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
         movement = directionToPlayer;
 
         moveSpeed -= moveSpeed * (Time.deltaTime / followPlayerSpeed);
+
     }
     private void FixedUpdate()
     {
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
     void moveEnemy(Vector2 dirToPlayer)
     {
         rb.MovePosition((Vector2)transform.position + (dirToPlayer * moveSpeed * Time.deltaTime) );
+
     }
 
     void ShootBullet()

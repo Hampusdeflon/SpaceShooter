@@ -59,8 +59,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Movement
+
         float directionY = Input.GetAxisRaw("Vertical"); // arrow up = 1, arrow down = -1
-        playerDirection = new Vector2(0, directionY).normalized;
+        float directionX = Input.GetAxisRaw("Horizontal");
+
+
+
+
+        playerDirection = new Vector2( directionX , directionY).normalized;
+
 
         ShootBullet();
 
@@ -69,7 +76,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(0, playerDirection.y * playerSpeed);
+        rb.velocity = new Vector2(playerDirection.x * playerSpeed , playerDirection.y * playerSpeed);
     }
 
     void ShootBullet()
@@ -77,7 +84,7 @@ public class Player : MonoBehaviour
         attackTimer += Time.deltaTime;
         if(attackTimer > curAttackTimerc)
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.C))
             {
                 attackTimer = 0;
                 Instantiate(playerBullet, bulletSpawnPos.position, Quaternion.identity);
@@ -102,6 +109,7 @@ public class Player : MonoBehaviour
             case "EnemyBullet":
                 healthBar.SetHealth(--currentHealth);
                 Destroy(collision.gameObject);
+                anim.SetTrigger("hitExplosion");
                 break;
 
             case "Enemy":
