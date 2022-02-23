@@ -463,6 +463,7 @@ MonoBehaviour:
   playerSpeed: 9
   playerBullet: {fileID: 4721744508064607777, guid: 98bbda4142f669744bd32503ac0033c4, type: 3}
   bulletSpawnPos: {fileID: 1266886468}
+  bulletSprite: {fileID: 0}
   attackTimer: 0.27
   bulletSound: {fileID: 1743563187}
   healthBar: {fileID: 1375144123}
@@ -2192,7 +2193,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5f3b12efe1cd3402cb905001e349e8aa, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.005
+  m_Volume: 0.003
   m_Pitch: 1
   Loop: 0
   Mute: 0

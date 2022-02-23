@@ -15,7 +15,8 @@ public class WeaponUpgrade : MonoBehaviour
            
             case 1: //Increase player shooting speed
                 FindObjectOfType<Player>()._curAttackTimerc = 0.2f;
-
+                var bulletSpriteRend = FindObjectOfType<Player>().playerBullet.GetComponentInChildren<SpriteRenderer>(); //Player Bullet Sprite
+                bulletSpriteRend.color = Color.magenta; //TODO use color #8BE6FF
                 Debug.Log("Increased Player Speed!");
                 break;
             //hold and shoot stråle on buttonpress?

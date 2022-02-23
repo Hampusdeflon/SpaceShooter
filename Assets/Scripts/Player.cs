@@ -13,8 +13,10 @@ public class Player : MonoBehaviour
     //Player Bullet:
     public GameObject playerBullet;
     public Transform bulletSpawnPos;
+    public SpriteRenderer bulletSprite;
     public float attackTimer;
     private float curAttackTimerc;
+    
     public float _curAttackTimerc
     {
         set { curAttackTimerc = value; }
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour
 
     //Audio
     public AudioSource bulletSound;
+    public AudioSource playerHitSound;
+
 
     //Health
     public HealthBar healthBar;
@@ -88,6 +92,7 @@ public class Player : MonoBehaviour
             {
                 attackTimer = 0;
                 Instantiate(playerBullet, bulletSpawnPos.position, Quaternion.identity);
+                bulletSound.pitch = Random.Range(0.8f, 1.2f);
                 bulletSound.PlayDelayed(0);
             }
         }
@@ -109,6 +114,7 @@ public class Player : MonoBehaviour
             case "EnemyBullet":
                 healthBar.SetHealth(--currentHealth);
                 Destroy(collision.gameObject);
+                playerHitSound.Play();
                 anim.SetTrigger("hitExplosion");
                 break;
 

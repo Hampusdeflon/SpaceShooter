@@ -60,6 +60,8 @@ public class Enemy : MonoBehaviour
         {
             shootTimer = 0;
             Instantiate(enemyBullet, bulletSpawnPos.position, Quaternion.Euler(0f,180f,0f)); // rotate 180*
+            bulletSound.pitch = Random.Range(0.8f, 1.2f);
+            bulletSound.volume = Random.Range(0.001f, 0.0025f);
             bulletSound.PlayDelayed(0);
 
         }
